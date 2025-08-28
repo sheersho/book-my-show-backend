@@ -1,8 +1,9 @@
-package com.bookmyshow.backend.model;
+package com.bookmyshow.bookmyshowaug25.model;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +17,6 @@ public class Screen extends BaseModel{
     @Enumerated
     @ElementCollection
     private List<Features> screenFeatures;
+    @OneToMany
     private List<Seat> seats;
 }

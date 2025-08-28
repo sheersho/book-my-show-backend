@@ -1,4 +1,4 @@
-package com.bookmyshow.backend.model;
+package com.bookmyshow.bookmyshowaug25.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -8,10 +8,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class ShowSeatType extends BaseModel{
+public class  ShowSeat extends BaseModel{
     @ManyToOne
     private Show show;
     @ManyToOne
-    private SeatType seatType;
-    private int price;
+    private Seat seat;
+    private ShowSeatStatus status;
 }

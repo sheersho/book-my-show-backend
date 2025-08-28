@@ -1,8 +1,9 @@
-package com.bookmyshow.backend.model;
+package com.bookmyshow.bookmyshowaug25.model;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,8 @@ public class Movie extends BaseModel{
     private String director;
     private String year;
     private String genre;
+    @ManyToMany
+    private List<Artist> cast;
     @Enumerated
     @ElementCollection
     private List<Features> featuresList;

@@ -1,8 +1,6 @@
-package com.bookmyshow.backend.model;
+package com.bookmyshow.bookmyshowaug25.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,9 +9,9 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity(name="shows")
+@Entity(name = "shows")
 
-public class Show extends BaseModel{
+public class Show extends BaseModel {
     @ManyToOne
     private Movie movie;
     @ManyToOne
@@ -25,8 +23,10 @@ public class Show extends BaseModel{
     private List<ShowSeat> showSeats;
     @OneToMany
     private List<ShowSeatType> showSeatTypes;
+    @Enumerated
     private Language language;
-
-    }
-
+    @Enumerated
+    @ElementCollection
+    private List<Features> features;
 }
+

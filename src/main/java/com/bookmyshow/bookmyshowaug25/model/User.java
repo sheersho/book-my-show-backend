@@ -1,4 +1,4 @@
-package com.bookmyshow.backend.model;
+package com.bookmyshow.bookmyshowaug25.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;

@@ -1,7 +1,9 @@
-package com.bookmyshow.backend.model;
+package com.bookmyshow.bookmyshowaug25.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,10 +18,11 @@ public class Booking extends BaseModel{
     private int noOfSeats;
     @ManyToOne
     private User bookedBy;
-    private  int totalAmount;
-    @OneToMany
+    private int totalAmount;
+    @ManyToMany
     private List<ShowSeat> bookedSeats;
+    @OneToMany
     private List<Payment> payments;
-    private BookingStatus
+    private BookingStatus status;
 }
 
